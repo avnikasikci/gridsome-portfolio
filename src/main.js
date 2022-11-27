@@ -1,6 +1,6 @@
 
 // Import main css
-import './assets/styles/index.scss'
+ import './assets/styles/index.scss'
 
 // This is the main.js file. Import global CSS and scripts here.
 // The Client API can be used here. Learn more: gridsome.org/docs/client-api
