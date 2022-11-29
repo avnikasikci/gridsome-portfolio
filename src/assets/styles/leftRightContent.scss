@@ -3,17 +3,100 @@
     position: fixed;
     bottom: 0px;
     left: auto;
-    right: 55px;
+    //right: 55px;
+    right: -7px;
     z-index: 10;
     color: var(--light-slate);
 }
 
 #left {
-    width: 40px;
+    //width: 40px;
+    width: 90px;
     position: fixed;
     bottom: 0px;
-    left: 40px;
+    //left: 40px;
+    left: -40px;
     right: auto;
     z-index: 10;
     color: var(--light-slate);
+}
+
+.gatsby-image-wrapper {
+    position: relative;
+    overflow: hidden
+}
+
+.gatsby-image-wrapper img {
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    margin: 0;
+    max-width: none;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    object-fit: cover
+}
+
+.gatsby-image-wrapper [data-main-image] {
+    opacity: 0;
+    transform: translateZ(0);
+    transition: opacity .25s linear;
+    will-change: opacity
+}
+
+.gatsby-image-wrapper-constrained {
+    display: inline-block
+}
+
+.left-social {
+    width: 40px;
+
+}
+
+.left-social-content {
+    display: flex;
+    margin: 10px;
+    padding: 20px;
+    font-size: 30px;
+}
+
+li {
+    list-style: none;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--navy);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--dark-slate);
+    border: 3px solid var(--navy);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
 }
