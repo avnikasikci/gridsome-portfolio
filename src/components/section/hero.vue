@@ -1,5 +1,5 @@
 <template>
-    <div>
+   
         <section id="section-hero" class="section-hero">
 
             <h1>Hi, my name is</h1>
@@ -21,7 +21,6 @@
 
         </section>
 
-    </div>
 </template>
 <script>
 </script>

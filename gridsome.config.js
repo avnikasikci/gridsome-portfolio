@@ -26,6 +26,35 @@ module.exports = {
         },
       },
     },
+    // {
+    //   use: '@gridsome/source-filesystem',
+    //   options: {
+    //     name: 'Content',        
+    //     path: 'static/content/**/*.md',
+    //     resolveAbsolutePaths: true,
+    //     remark: {
+    //       externalLinksTarget: '_blank',
+    //       externalLinksRel: ['nofollow', 'noopener', 'noreferrer'],
+    //     },
+    //   },
+    // },
+
+    // {
+    //   // Create posts from markdown files
+    //   use: '@gridsome/source-filesystem',
+    //   options: {
+    //     typeName: 'Jobs',
+    //     path: 'static/content/jobs/*.md',
+    //     refs: {
+    //       // Creates a GraphQL collection from 'tags' in front-matter and adds a reference.
+    //       tags: {
+    //         typeName: 'Tag',
+    //         create: true
+    //       }
+    //     }
+    //   }
+    // },
+
     {
       use: '@gridsome/plugin-google-analytics',
       options: {
