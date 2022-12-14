@@ -4,7 +4,10 @@
   "scripts": {
     "build": "gridsome build",
     "develop": "gridsome develop",
-    "explore": "gridsome explore"
+    "explore": "gridsome explore",
+    "sslset":"set NODE_OPTIONS=--openssl-legacy-provider",
+    "serve": "set NODE_OPTIONS=--openssl-legacy-provider && gridsome develop"
+
   },
   "dependencies": {
     "@gridsome/plugin-google-analytics": "^0.1.2",
@@ -12,8 +15,11 @@
     "@gridsome/source-filesystem": "^0.6.2",
     "bootstrap": "^5.2.3",
     "bootstrap-vue": "^2.23.1",
-    "gridsome": "^0.7.0",
-    "node-sass": "^5.0.0",
-    "sass-loader": "^10.0.3"
+    "gridsome": "^0.7.0"
+
+  },
+  "devDependencies": {
+    "sass": "^1.56.2",
+    "sass-loader": "^10.1.1"
   }
 }
