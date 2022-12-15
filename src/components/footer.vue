@@ -1,1 +1,5 @@
-<template><footer></footer></template>
+<template>
+    <footer>
+        <label>Avni Kasikci</label>
+    </footer>
+</template>

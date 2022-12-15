@@ -6,20 +6,8 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 module.exports = function (api) {
-  api.loadSource(async ({ addMetadata, addCollection }) => {
+  api.loadSource(({ addCollection }) => {
     // Use the Data Store API here: https://gridsome.org/docs/data-store-api/
-    let gridsomeVersion = ''
-
-    try {
-      const { stdout } = await execa('npm', ['show', 'gridsome', 'version'])
-      gridsomeVersion = stdout
-    } catch (err) {
-      console.warn('Failed to get gridsome version from npm.')
-    }
-
-    addMetadata('gridsomeVersion', gridsomeVersion)
-
-    
   })
 
   api.createPages(({ createPage }) => {

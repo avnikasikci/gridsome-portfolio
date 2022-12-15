@@ -1,27 +1,15 @@
 <template>
-
-  <!-- <div class="layout">
-    <header class="header">
-      <Navbar :siteName="$static.metadata.siteName" />
-    </header>
-      <leftContent/>
-      <rightContent/>
-   
-    <slot/>
-  </div> -->
-
   <div id="root">
     <a class="skip-to-content" href="#content">
       Skip to Content
     </a>
     <div class="layout-content">
-      <Nav />
+      <!-- <Nav />
       <Social />
-      <Email />
+      <Email /> -->
       <div id="content">
-        <!-- {children} -->
-        <slot />
-        <Footer />
+        <!-- <slot /> -->
+        <!-- <Footer /> -->
       </div>
 
     </div>
@@ -41,37 +29,18 @@
   grid-template-columns: 100%;
 }
 </style>
-<static-query>
-query {
-  metadata {
-    siteName
-  }
-}
-</static-query>
-
 <script>
-import Footer from '~/components/footer'
-import Navbar from '~/components/navbar'
-import Social from '~/components/social'
-import Email from '~/components/mail'
+// import Nav from '~/components/nav'
+// import Social from '~/components/social'
+// import Email from '~/components/mail'
+// import Footer from '~/components/footer'
 
-import Nav from '~/components/nav'
-import Head from '~/components/head'
-import leftContent from '~/components/leftContent'
-import rightContent from '~/components/rightContent'
-
-import Home from '../pages/home.vue'
-export default {
-  components: {
-    Navbar,
-    Social,
-    Email,
-    Footer,
-    Head,
-    Home,
-    Nav,
-    leftContent,
-    rightContent
-  }
-}
+// export default {
+//   components: {
+//     Nav,
+//     Social,
+//     Email,
+//     Footer    
+//   }
+// }
 </script>
