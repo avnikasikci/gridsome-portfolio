@@ -12,7 +12,6 @@ import Side from './side.vue'
 export default {
     data: function () {
         return {
-            params: [],
             configNav: [],
             configSocial: []
         }

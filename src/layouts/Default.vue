@@ -4,12 +4,12 @@
       Skip to Content
     </a>
     <div class="layout-content">
-      <!-- <Nav />
+      <Nav />
       <Social />
-      <Email /> -->
+      <Email />
       <div id="content">
-        <!-- <slot /> -->
-        <!-- <Footer /> -->
+        <slot />
+        <Footer />
       </div>
 
     </div>
@@ -30,17 +30,17 @@
 }
 </style>
 <script>
-// import Nav from '~/components/nav'
-// import Social from '~/components/social'
-// import Email from '~/components/mail'
-// import Footer from '~/components/footer'
+import Nav from '~/components/nav'
+import Social from '~/components/social'
+import Email from '~/components/mail'
+import Footer from '~/components/footer'
 
-// export default {
-//   components: {
-//     Nav,
-//     Social,
-//     Email,
-//     Footer    
-//   }
-// }
+export default {
+  components: {
+    Nav,
+    Social,
+    Email,
+    Footer    
+  }
+}
 </script>

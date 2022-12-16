@@ -23,6 +23,9 @@
 
 </template>
 <script>
+export default{
+    
+}
 </script>
 <style>
 .section-hero {

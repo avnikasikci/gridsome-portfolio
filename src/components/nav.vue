@@ -50,7 +50,6 @@ import config from '../config.js'
 export default {
     data: function () {
         return {
-            params: [],
             configNav: [],
         }
     },
@@ -61,7 +60,6 @@ export default {
 
         // props are exposed on `this`
         this.configNav = config.navLinks;
-        console.log("creait", this.configNav)
     }
 }
 </script>

@@ -1,4 +1,10 @@
 <template>
     <label>contanct me</label>
-    
-    </template>
+
+</template>
+
+<script>
+export default {
+
+}
+</script>

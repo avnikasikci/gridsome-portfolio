@@ -6,8 +6,12 @@
       <About />
       <Jobs />
     </main>
+
+
+      
   </Layout>
 </template>
+
   
 
 <script>
@@ -22,7 +26,6 @@ export default {
   }
 }
 </script>
-
 
 
   

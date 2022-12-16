@@ -21,21 +21,17 @@
 </template>
 <script>
 import config from '../config.js'
-import Side from './side.vue'
 export default {
     data: function () {
         return {
-            params: [],
             configNav: [],
             configSocial: []
         }
     },
     components: {
-        Side
     },
     created() {
 
-        // props are exposed on `this`
         this.configNav = config.navLinks;
         this.configSocial = config.socialMedia;
     }
