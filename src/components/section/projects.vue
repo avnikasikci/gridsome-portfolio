@@ -1,15 +1,22 @@
 <template>
-    <!-- <section class="projects__StyledProjectsSection-sc-1v1fime-0 cMhhGM"> -->
     <section class="projects-section">
         <h2 data-sr-id="7"
             style="visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transition: opacity 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0.2s, transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0.2s;">
-            Other Noteworthy Projects</h2><a class="inline-link archive-link" href="/archive" data-sr-id="8"
+            Other Noteworthy Projects
+        </h2>
+
+        <a class="inline-link archive-link" href="/archive" data-sr-id="8"
             style="visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s, opacity 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0.2s, transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0.2s;">view
-            the archive</a>
+            the archive
+        </a>
+
         <ul class="projects-grid">
             <li class="projects"
-                style="transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s, opacity 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0s, transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0s; visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);"
-                data-sr-id="9" v-for="(edge, index) in $static.projects.edges" :key="edge.node.id">
+            :style="getStyleCustomByProjectsLi(index)"
+            
+                 :data-sr-id="9 + index" v-for="(edge, index) in showInProjectTemp?$static.projects.edges.filter(x=>x.node.showInProjects == false):
+                $static.projects.edges.filter(x=>x.node.showInProjects == false).slice(0,gridLimitCount)"
+                :key="edge.node.id">
                 <div class="project-inner">
                     <header>
                         <div class="project-top">
@@ -61,10 +68,12 @@
                     </footer>
                 </div>
             </li>
-        
+
 
         </ul>
-        <button class="more-button">Show More</button>
+        <button @click="showInProjectTemp = !showInProjectTemp" class="more-button">
+            {{ showInProjectTemp ? "Show Less" : "Show More" }}
+        </button>
     </section>
 
 </template>
@@ -92,6 +101,75 @@ query MyQuery {
 
 <script>
 export default {
+    data: function () {
+        return {
 
+            showInProjectTemp: false,
+            gridLimitCount: 6
+        }
+    },
+    methods: {
+        changeDataSrIdCountTempFunc: function (idIndex) {
+            // console.log("idIndex:",idIndex)
+            // var id = this.dataSrIdCountTemp++;
+            // console.log(id) // 1
+        },
+
+        getStyleCustomByProjectsLi(index){
+            let testStyle='';
+            if(index < this.gridLimitCount){
+                testStyle=  'transition:all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s, opacity 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0.'+index+'s, transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0.'+index+'s';
+            }else{
+                testStyle=  'transition-delay:'+index* 100+'ms;';
+            }
+            
+            return testStyle;
+        }
+    },
+    computed: {
+
+        // propertyComputed() {
+
+        //   console.log('I change when this.property changes.')
+
+        //   return this.property
+
+        // }
+
+    },
+    created() {
+// debugger;
+        // this.property = 'Example property update.'
+
+        // console.log('propertyComputed will update, as this.property is now reactive.')
+        // let projectChild = document.getElementsByClassName("projects");
+        // let index=0;
+        // for (let item of projectChild) {
+        //     index++;
+        //     let dataSrId = item.getAttribute("data-sr-id") - 9;
+        //     console.log("test");
+        //     console.log("cureatod data sr", dataSrId);
+
+        //     // item.style.transition='all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s, opacity 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0s, transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0s';
+        //     let testStyle=  'all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s, opacity 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0.'+index+'s, transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0.'+index+'s';
+        //     let testStyle6= 'all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s, opacity 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0.5s, transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0.5s'
+
+        //     item.style.transition=testStyle
+        //     console.log("testStyle=",testStyle)
+        //     let testStyle2= 'transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s, opacity 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0.1s, transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0.1s;'
+        //     let testStyle3= 'transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s, opacity 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0.2s, transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0.2s;'
+        //     let testStyle4= 'transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s, opacity 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0.3s, transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0.3s;'
+        //     let testStyle5= 'transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s, opacity 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0.5s, transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0.5s;'
+        //     let showMoreStyle='transition-delay: 0ms;'
+        //     let showMoreStyle2='transition-delay: 100ms;'
+        //     let showMoreStyle3='transition-delay: 200ms;'
+
+        // }
+        // projectChild.forEach(element => {
+        //     let dataSrId=element.getAttribute("data-sr-id")
+        //     console.log("cureatod data sr",dataSrId);
+        // });
+
+    }
 }
 </script>
