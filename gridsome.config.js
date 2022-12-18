@@ -72,6 +72,36 @@ url: 'https://www.apple.com/music/'
       // Create posts from markdown files
       use: '@gridsome/source-filesystem',
       options: {
+        typeName: 'Featured',
+        path: 'static/content/featured/**/*.md',
+        refs: {
+          // Creates a GraphQL collection from 'tags' in front-matter and adds a reference.
+          tags: {
+            typeName: 'Tag',
+            create: true
+          }
+        }
+      }
+    },
+    {
+      // Create posts from markdown files
+      use: '@gridsome/source-filesystem',
+      options: {
+        typeName: 'Projects',
+        path: 'static/content/projects/**/*.md',
+        refs: {
+          // Creates a GraphQL collection from 'tags' in front-matter and adds a reference.
+          tags: {
+            typeName: 'Tag',
+            create: true
+          }
+        }
+      }
+    },
+    {
+      // Create posts from markdown files
+      use: '@gridsome/source-filesystem',
+      options: {
         typeName: 'Content',
         path: 'static/content/**/**/**/*.md',
         refs: {
